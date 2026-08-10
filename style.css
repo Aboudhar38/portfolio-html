@@ -1,0 +1,993 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #050a1a;
+    color: #F3F4F6;
+    font-family: "Lexend Deca", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+
+    height: 55px;
+
+    background: #020617;
+
+    border-top: 2px solid #191D28;
+    border-bottom: 2px solid #191D28;
+    ;
+
+    display: flex;
+
+    align-items: center;
+    font-family: "Lexend Deca", sans-serif;
+    justify-content: space-between;
+    font-size: 200px;
+    padding: 0 12%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #FFFFFF;
+}
+
+
+.logo span {
+
+    color: #f5c000;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 27px;
+
+}
+
+
+nav a {
+
+    color: #999fae;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-family: "Lexend Deca", sans-serif;
+    transition: 0.3s;
+
+}
+
+
+nav a:hover {
+
+    color: #FFFFFF;
+
+}
+
+
+section {
+
+    padding: 70px 12%;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.section-title span {
+
+    color: #f5c000;
+
+}
+
+
+.section-title p {
+
+    color: #6e7483;
+
+    font-size: 10px;
+
+}
+
+.home {
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 60px;
+    background-color: #111827;
+
+}
+
+
+.home-text {
+
+    max-width: 450px;
+    font-family: "Lexend deca", sans-serif;
+
+}
+
+
+.yellow-text {
+
+    color: #EAB308;
+
+    width: 120;
+    height: 27;
+    font-family: "Lexend deca", sans-serif;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+}
+
+
+.home h1 {
+    font-family: "Lexend deca", sans-serif;
+    width: 347;
+    height: 64;
+    margin-bottom: 15px;
+
+}
+
+
+.description {
+
+    color: #6B7280;
+    font-weight: 400px;
+    font-size: 16px;
+    font-family: "Lexend Deca", sans-serif;
+    max-width: 390px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.button {
+
+    display: inline-block;
+
+    background: #FACC15;
+
+    color: #000000;
+
+    text-decoration: none;
+
+    padding: 10px 16px;
+
+    width: 83;
+    height: 27;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+
+}
+
+
+.button:hover {
+
+    background: rgb(233, 230, 78);
+
+}
+
+
+
+.home-image {
+
+    width: 255px;
+
+    height: 300px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    gap: 199px;
+}
+
+
+.home-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.about {
+
+    min-height: 360px;
+
+    display: flex;
+
+    justify-content: left;
+
+    align-items: center;
+
+    gap: 70px;
+
+    background: #020617;
+
+}
+
+
+.about-image {
+
+    width: 255px;
+
+    height: 255px;
+
+    position: relative;
+
+}
+
+
+.yellow-frame {
+
+    position: absolute;
+
+    width: 238px;
+
+    height: 250px;
+
+    background: #f5c000;
+
+    left: -17px;
+
+    top: 7px;
+
+    border-radius: 11px;
+
+}
+
+
+.about-image img {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 238px;
+
+    height: 238px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+}
+
+.about-image img {
+    transform: scale(1.05);
+}
+
+.about-text {
+
+    width: 370px;
+
+}
+
+
+.about-text h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.about-text h2 span {
+
+    color: #f5c000;
+
+}
+
+
+.about-text p {
+
+    color: #747a89;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+/* ==================================================
+                    SERVICES
+================================================== */
+
+.services {
+
+    background: #111827;
+    font-family: "Lexend Deca", sans-serif;
+    text-align: left;
+}
+
+
+.service-container {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    width: 1440;
+    height: 759;
+    margin-left: 0;
+    margin-right: auto;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+h2,
+p {
+    text-align: left;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.service-card {
+
+    background: #020617;
+
+    border: 1px solid #172036;
+
+    padding: 25px 15px;
+
+    font-family: "Lexend Deca", sans-serif;
+    text-align: left;
+    gap: 8px;
+    min-height: 200px;
+    border-radius: 12px;
+
+}
+
+
+.service-icon {
+
+    color: #EAB308;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.service-card h3 {
+
+    font-size: 20px;
+
+    font-family: "Lexend Deca", sans-serif;
+
+    margin-bottom: 10px;
+
+}
+
+
+.service-card p {
+
+    color: #707788;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+}
+
+/* =========================
+       PORTFOLIO
+========================= */
+
+.portfolio {
+    background: #020718;
+    padding: 70px 12%;
+}
+
+
+/* TITLE */
+
+.portfolio .section-title {
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.portfolio .section-title h2 {
+    text-align: center;
+    font-size: 23px;
+}
+
+.portfolio .section-title span {
+    color: #f5c000;
+}
+
+.portfolio .section-title p {
+    color: #707788;
+    font-size: 10px;
+    line-height: 1.6;
+
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+
+/* =========================
+       PORTFOLIO CONTAINER
+========================= */
+
+.portfolio-container {
+
+    width: 700px;
+    height: 280px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+/* =========================
+       BIG IMAGE
+========================= */
+
+.portfolio-big {
+
+    width: 390px;
+    height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+}
+
+
+.portfolio-big img {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 12;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.portfolio-big img:hover {
+
+    transform: scale(1.05);
+}
+
+
+
+/* =========================
+       SMALL IMAGES
+========================= */
+
+.portfolio-small {
+
+    width: 270px;
+    height: 280px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.portfolio-item {
+
+    overflow: hidden;
+
+    border-radius: 6px;
+}
+
+
+.portfolio-item img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.portfolio-item img:hover {
+
+    transform: scale(1.08);
+}
+
+/* ==================================================
+                    EXPERIENCE
+================================================== */
+
+.experience {
+
+    background: #171b27;
+
+}
+
+
+.experience-container {
+
+    max-width: 700px;
+
+    margin: auto;
+    border-radius: 12px;
+    margin-left: 0;
+    margin-right: auto;
+    display: grid;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.experience-card {
+
+    background: #050a1a;
+    border-radius: 12px;
+    width: 366;
+    height: 303;
+    border: 1px solid #172036;
+
+    padding: 20px 15px;
+
+    min-height: 170px;
+
+}
+
+
+.date {
+
+    color: #D1D5DB;
+
+    width: 167;
+
+    height: 27;
+
+}
+
+
+.experience-card h3 {
+
+
+    font-family: "Lexend Deca", sans-serif;
+    color: #EAB308;
+    margin-top: 8px;
+    width: 214;
+    height: 41;
+}
+
+
+.experience-card h4 {
+
+    color: #D1D5DB;
+    font-family: "Lexend Deca", sans-serif;
+    width: 143;
+    height: 27;
+    font-size: 9px;
+
+    margin: 5px 0 10px;
+
+}
+
+
+.experience-card p {
+
+    color: #707788;
+
+    font-size: 8px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* ==================================================
+                    CONTACT
+================================================== */
+
+.contact {
+
+    background: #020617;
+
+}
+
+.contact .section-title {
+    text-align: center;
+    width: 242;
+    height: 64;
+}
+
+.contact .section-title p {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.contact-container {
+
+    max-width: 700px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.contact-info h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.contact-info p {
+
+    color: #F3F4F6;
+
+    width: 347;
+    height: 253;
+
+    margin-bottom: 12px;
+
+}
+
+
+.contact-info strong {
+
+    color: #f5c000;
+
+}
+
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    background: #242b3a;
+
+    border: 1px solid #4a576d;
+
+    color: rgb(245, 236, 236);
+
+    padding: 10px;
+
+    font-size: 9px;
+
+    outline: none;
+
+}
+
+
+input:focus,
+textarea:focus {
+
+    border-color: #d8b01e;
+
+}
+
+
+textarea {
+
+    resize: none;
+
+}
+
+
+button {
+
+    width: 90px;
+
+    padding: 9px;
+
+    background: #f5c000;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 100;
+    height: 100;
+
+    border-radius: 2px;
+
+}
+
+
+button:hover {
+
+    background: rgb(233, 230, 78);
+
+}
+
+
+
+/* ==================================================
+                    FOOTER
+================================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #020718;
+
+    border-top: 1px solid #151d30;
+
+}
+
+
+footer h3 {
+
+    width: 191;
+    height: 50;
+
+    margin-bottom: 8px;
+
+}
+
+
+footer h3 span {
+
+    color: #f5c000;
+
+}
+
+
+footer p {
+
+    color: #1F2937;
+    text-align: center;
+    width: 685;
+    height: 54;
+
+}
+
+
+footer .copyright {
+
+    margin-top: 15px;
+
+}
+
+
+
+/* ==================================================
+                    RESPONSIVE
+================================================== */
+
+@media (max-width: 800px) {
+
+    header {
+
+        padding: 0 5%;
+
+    }
+
+
+    nav {
+
+        gap: 12px;
+
+    }
+
+
+    section {
+
+        padding: 60px 5%;
+
+    }
+
+
+    .home {
+
+        gap: 30px;
+
+    }
+
+
+    .service-container,
+    .experience-container {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .home {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .home-text {
+
+        max-width: 100%;
+
+    }
+
+
+    .description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .about {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .about-text {
+
+        width: 90%;
+
+    }
+
+
+    .service-container,
+    .experience-container {
+
+        grid-template-columns: 1fr;
+
+        max-width: 350px;
+
+    }
+
+
+    .portfolio-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
