@@ -11,7 +11,7 @@ html {
 
 
 body {
-    background: #050a1a;
+    background: #020617;
     color: #F3F4F6;
     font-family: "Lexend Deca", sans-serif;
     line-height: 1.6;
@@ -25,15 +25,13 @@ header {
 
     border-top: 2px solid #191D28;
     border-bottom: 2px solid #191D28;
-    ;
 
     display: flex;
 
     align-items: center;
     font-family: "Lexend Deca", sans-serif;
     justify-content: space-between;
-    font-size: 200px;
-    padding: 0 12%;
+    padding: 0 max(12%, calc(50% - 600px));
 
     position: sticky;
 
@@ -82,16 +80,82 @@ nav a {
 }
 
 
-nav a:hover {
+nav a:hover,
+nav a.active {
 
     color: #FFFFFF;
+    font-weight: bold;
+
+}
+
+
+.nav-toggle {
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 26px;
+    height: 18px;
+
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+
+    z-index: 1100;
+
+}
+
+
+.nav-toggle:focus-visible {
+
+    outline: 2px solid #f5c000;
+    outline-offset: 6px;
+    border-radius: 2px;
+
+}
+
+
+.nav-toggle span {
+
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background: #FFFFFF;
+    border-radius: 2px;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-toggle.open span:nth-child(1) {
+
+    transform: translateY(8px) rotate(45deg);
+
+}
+
+
+.nav-toggle.open span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.nav-toggle.open span:nth-child(3) {
+
+    transform: translateY(-8px) rotate(-45deg);
 
 }
 
 
 section {
 
-    padding: 70px 12%;
+    padding: 70px max(12%, calc(50% - 600px));
 
 }
 
@@ -123,9 +187,10 @@ section {
 
 .section-title p {
 
-    color: #6e7483;
+    color: #9aa1b0;
 
-    font-size: 10px;
+    font-size: 16px;
+    line-height: 1.7;
 
 }
 
@@ -157,8 +222,6 @@ section {
 
     color: #EAB308;
 
-    width: 120;
-    height: 27;
     font-family: "Lexend deca", sans-serif;
     font-weight: bold;
 
@@ -169,8 +232,6 @@ section {
 
 .home h1 {
     font-family: "Lexend deca", sans-serif;
-    width: 347;
-    height: 64;
     margin-bottom: 15px;
 
 }
@@ -178,9 +239,10 @@ section {
 
 .description {
 
-    color: #6B7280;
-    font-weight: 400px;
+    color: #9aa1b0;
+    font-weight: 400;
     font-size: 16px;
+    line-height: 1.7;
     font-family: "Lexend Deca", sans-serif;
     max-width: 390px;
 
@@ -201,9 +263,6 @@ section {
 
     padding: 10px 16px;
 
-    width: 83;
-    height: 27;
-
     border-radius: 4px;
 
     transition: 0.3s;
@@ -221,15 +280,15 @@ section {
 
 .home-image {
 
-    width: 255px;
+    width: 420px;
 
-    height: 300px;
+    height: 480px;
 
     border-radius: 24px;
 
     overflow: hidden;
+    flex-shrink: 0;
 
-    gap: 199px;
 }
 
 
@@ -245,15 +304,15 @@ section {
 
 .about {
 
-    min-height: 360px;
+    min-height: 460px;
 
     display: flex;
 
-    justify-content: left;
+    justify-content: space-between;
 
     align-items: center;
 
-    gap: 70px;
+    gap: 110px;
 
     background: #020617;
 
@@ -262,11 +321,13 @@ section {
 
 .about-image {
 
-    width: 255px;
+    width: 400px;
 
-    height: 255px;
+    height: 400px;
 
     position: relative;
+
+    flex-shrink: 0;
 
 }
 
@@ -275,20 +336,19 @@ section {
 
     position: absolute;
 
-    width: 238px;
+    width: 375px;
 
-    height: 250px;
+    height: 390px;
 
-    background: #f5c000;
+    border: 10px solid #f5c000;
 
-    left: -17px;
+    left: -20px;
 
-    top: 7px;
+    top: 8px;
 
-    border-radius: 11px;
+    border-radius: 24px;
 
 }
-
 
 .about-image img {
 
@@ -296,13 +356,14 @@ section {
 
     z-index: 2;
 
-    width: 238px;
+    width: 370px;
 
-    height: 238px;
+    height: 370px;
 
     object-fit: cover;
 
-    border-radius: 15px;
+    border-radius: 18px;
+    margin-left: 8px;
 
 }
 
@@ -312,14 +373,14 @@ section {
 
 .about-text {
 
-    width: 370px;
+    max-width: 480px;
 
 }
 
 
 .about-text h2 {
 
-    font-size: 23px;
+    font-size: 34px;
 
     margin-bottom: 20px;
 
@@ -335,13 +396,77 @@ section {
 
 .about-text p {
 
-    color: #747a89;
+    color: #9aa1b0;
 
-    font-size: 10px;
+    font-size: 16px;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+
+}
+
+
+/* SOCIAL ICONS (footer) */
+
+.social-icons {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 20px;
+
+}
+
+
+.social-icons a {
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #6e7483;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+
+}
+
+
+.social-icons a:hover {
+
+    color: #FFFFFF;
+
+    background: rgba(255, 255, 255, 0.12);
+
+}
+
+
+.social-icons a.active-icon {
+
+    background: #f5c000;
+
+    color: #020617;
+
+}
+
+
+footer .social-icons {
+
+    justify-content: center;
+
+    margin: 20px auto;
 
 }
 
@@ -355,31 +480,52 @@ section {
 
     background: #111827;
     font-family: "Lexend Deca", sans-serif;
+}
+
+
+.services .section-title {
+
     text-align: left;
+
+    max-width: 500px;
+
+    margin: 0 0 45px;
+
+}
+
+
+.services .section-title h2 {
+
+    font-size: 34px;
+
+}
+
+
+.services .section-title p {
+
+    text-align: left;
+
+    margin-top: 10px;
+
 }
 
 
 .service-container {
 
-    max-width: 700px;
+    width: 100%;
 
-    margin: auto;
+    margin: 0;
 
-    width: 1440;
-    height: 759;
-    margin-left: 0;
-    margin-right: auto;
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 8px;
+    gap: 24px;
 
 }
 
 h2,
 p {
-    text-align: left;
     font-family: "Lexend Deca", sans-serif;
 }
 
@@ -389,13 +535,25 @@ p {
 
     border: 1px solid #172036;
 
-    padding: 25px 15px;
+    padding: 32px 22px;
 
     font-family: "Lexend Deca", sans-serif;
-    text-align: left;
-    gap: 8px;
-    min-height: 200px;
+    text-align: center;
+    min-height: 230px;
     border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+
+}
+
+
+.service-card:hover {
+
+    border-color: #f5c000;
+    transform: translateY(-4px);
 
 }
 
@@ -404,31 +562,33 @@ p {
 
     color: #EAB308;
 
-    font-size: 40px;
+    font-size: 44px;
 
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 
 }
 
 
 .service-card h3 {
 
-    font-size: 20px;
+    font-size: 22px;
 
     font-family: "Lexend Deca", sans-serif;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
 }
 
 
 .service-card p {
 
-    color: #707788;
+    color: #9aa1b0;
 
-    font-size: 8px;
+    font-size: 16px;
 
-    line-height: 1.6;
+    line-height: 1.7;
+
+    text-align: center;
 
 }
 
@@ -438,7 +598,7 @@ p {
 
 .portfolio {
     background: #020718;
-    padding: 70px 12%;
+    padding: 70px max(12%, calc(50% - 600px));
 }
 
 
@@ -460,11 +620,9 @@ p {
 }
 
 .portfolio .section-title p {
-    color: #707788;
-    font-size: 10px;
-    line-height: 1.6;
+    text-align: center;
 
-    max-width: 300px;
+    max-width: 500px;
     margin: 10px auto;
 }
 
@@ -475,14 +633,14 @@ p {
 
 .portfolio-container {
 
-    width: 700px;
-    height: 280px;
+    width: 100%;
+    height: 500px;
 
     margin: 0 auto;
 
     display: flex;
 
-    gap: 12px;
+    gap: 16px;
 }
 
 
@@ -492,8 +650,8 @@ p {
 
 .portfolio-big {
 
-    width: 390px;
-    height: 280px;
+    width: 62%;
+    height: 100%;
 
     overflow: hidden;
 
@@ -505,7 +663,7 @@ p {
 
     width: 100%;
     height: 100%;
-    border-radius: 12;
+    border-radius: 12px;
 
     object-fit: cover;
 
@@ -528,8 +686,8 @@ p {
 
 .portfolio-small {
 
-    width: 270px;
-    height: 280px;
+    width: 38%;
+    height: 100%;
 
     display: grid;
 
@@ -537,7 +695,7 @@ p {
 
     grid-template-rows: 1fr 1fr;
 
-    gap: 12px;
+    gap: 16px;
 }
 
 
@@ -574,39 +732,49 @@ p {
 .experience {
 
     background: #171b27;
+}
+
+.experience .section-title {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 0 40px;
 
 }
 
-
 .experience-container {
 
-    max-width: 700px;
+    width: 100%;
 
-    margin: auto;
+    margin: 0;
     border-radius: 12px;
-    margin-left: 0;
-    margin-right: auto;
-    display: grid;
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 8px;
+    gap: 24px;
 
 }
 
 
 .experience-card {
 
-    background: #050a1a;
+    background: #020617;
     border-radius: 12px;
-    width: 366;
-    height: 303;
     border: 1px solid #172036;
 
-    padding: 20px 15px;
+    padding: 32px 22px;
 
-    min-height: 170px;
+    min-height: 230px;
+
+    transition: 0.3s;
+
+}
+
+
+.experience-card:hover {
+
+    border-color: #f5c000;
+    transform: translateY(-4px);
 
 }
 
@@ -614,22 +782,19 @@ p {
 .date {
 
     color: #D1D5DB;
-
-    width: 167;
-
-    height: 27;
+    display: block;
+    font-size: 14px;
 
 }
 
 
 .experience-card h3 {
 
-
     font-family: "Lexend Deca", sans-serif;
     color: #EAB308;
-    margin-top: 8px;
-    width: 214;
-    height: 41;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 4px;
 }
 
 
@@ -637,22 +802,22 @@ p {
 
     color: #D1D5DB;
     font-family: "Lexend Deca", sans-serif;
-    width: 143;
-    height: 27;
-    font-size: 9px;
+    font-size: 14px;
+    font-weight: 700;
 
-    margin: 5px 0 10px;
+    margin: 5px 0 14px;
 
 }
 
 
 .experience-card p {
 
-    color: #707788;
+    color: #9aa1b0;
 
-    font-size: 8px;
+    font-size: 16px;
 
     line-height: 1.7;
+    text-align: left;
 
 }
 
@@ -670,8 +835,8 @@ p {
 
 .contact .section-title {
     text-align: center;
-    width: 242;
-    height: 64;
+    max-width: 550px;
+    margin: 0 auto 40px;
 }
 
 .contact .section-title p {
@@ -681,7 +846,7 @@ p {
 
 .contact-container {
 
-    max-width: 700px;
+    width: 100%;
     margin: auto;
 
     display: grid;
@@ -693,21 +858,10 @@ p {
 }
 
 
-.contact-info h3 {
-
-    font-size: 14px;
-
-    margin-bottom: 20px;
-
-}
-
-
 .contact-info p {
 
     color: #F3F4F6;
-
-    width: 347;
-    height: 253;
+    font-size: 13px;
 
     margin-bottom: 12px;
 
@@ -727,23 +881,37 @@ form {
 
     flex-direction: column;
 
-    gap: 8px;
+    gap: 20px;
 
 }
 
+input{
+    width: 75%;
 
-input,
+    background: #242b3a;
+
+    border: none;
+
+    color: rgb(245, 236, 236);
+
+    padding: 12px;
+
+    font-size: 9px;
+
+    outline: none;
+}
+
 textarea {
 
     width: 100%;
 
     background: #242b3a;
 
-    border: 1px solid #4a576d;
+    border: none;
 
     color: rgb(245, 236, 236);
 
-    padding: 10px;
+    padding: 12px;
 
     font-size: 9px;
 
@@ -769,9 +937,7 @@ textarea {
 
 button {
 
-    width: 90px;
-
-    padding: 9px;
+    padding: 16px 20px;
 
     background: #f5c000;
 
@@ -779,10 +945,9 @@ button {
 
     cursor: pointer;
 
-    width: 100;
-    height: 100;
+    align-self: flex-start;
 
-    border-radius: 2px;
+    border-radius: 4px;
 
 }
 
@@ -807,15 +972,14 @@ footer {
 
     background: #020718;
 
-    border-top: 1px solid #151d30;
 
 }
 
-
 footer h3 {
 
-    width: 191;
-    height: 50;
+    font-size: 32px;
+
+    font-weight: bold;
 
     margin-bottom: 8px;
 
@@ -831,10 +995,12 @@ footer h3 span {
 
 footer p {
 
-    color: #1F2937;
+    color: #9aa1b0;
+    font-size: 16px;
+    line-height: 1.7;
     text-align: center;
-    width: 685;
-    height: 54;
+    max-width: 685px;
+    margin: 0 auto;
 
 }
 
@@ -842,6 +1008,7 @@ footer p {
 footer .copyright {
 
     margin-top: 15px;
+    color: #4b5263;
 
 }
 
@@ -851,7 +1018,7 @@ footer .copyright {
                     RESPONSIVE
 ================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
 
     header {
 
@@ -860,9 +1027,48 @@ footer .copyright {
     }
 
 
+    .nav-toggle {
+
+        display: flex;
+        margin-top: 16px;
+    }
+
+
     nav {
 
-        gap: 12px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: #020617;
+        border-bottom: 2px solid #191D28;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+
+    }
+
+
+    nav.open {
+
+        max-height: 400px;
+
+    }
+
+
+    nav a {
+
+        width: 100%;
+        padding: 14px 5%;
+
+        text-align: center;
+        border-top: 1px solid #191D28;
 
     }
 
@@ -876,50 +1082,13 @@ footer .copyright {
 
     .home {
 
-        gap: 30px;
-
-    }
-
-
-    .service-container,
-    .experience-container {
-
-        grid-template-columns: repeat(3, 1fr);
-
-    }
-
-}
-
-
-@media (max-width: 650px) {
-
-    header {
-
-        height: auto;
-
-        padding: 15px;
-
         flex-direction: column;
-
-        gap: 12px;
-
-    }
-
-
-    nav {
-
-        flex-wrap: wrap;
 
         justify-content: center;
 
-    }
-
-
-    .home {
-
-        flex-direction: column;
-
         text-align: center;
+
+        gap: 40px;
 
     }
 
@@ -927,6 +1096,15 @@ footer .copyright {
     .home-text {
 
         max-width: 100%;
+
+    }
+
+
+    .home-image {
+
+        width: 100%;
+        max-width: 420px;
+        height: 380px;
 
     }
 
@@ -944,29 +1122,55 @@ footer .copyright {
 
         flex-direction: column;
 
+        justify-content: center;
+
         text-align: center;
+
+        gap: 50px;
+
+    }
+
+
+    .about-image {
+
+        width: 320px;
+        height: 320px;
+
+    }
+
+
+    .yellow-frame {
+
+        width: 300px;
+        height: 312px;
+
+    }
+
+
+    .about-image img {
+
+        width: 296px;
+        height: 296px;
 
     }
 
 
     .about-text {
 
-        width: 90%;
+        max-width: 90%;
+
+    }
+
+
+    .social-icons {
+
+        justify-content: center;
 
     }
 
 
     .service-container,
     .experience-container {
-
-        grid-template-columns: 1fr;
-
-        max-width: 350px;
-
-    }
-
-
-    .portfolio-grid {
 
         grid-template-columns: repeat(2, 1fr);
 
@@ -982,11 +1186,76 @@ footer .copyright {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 650px) {
 
-    .portfolio-grid {
+    .home-image {
+
+        width: 260px;
+        height: 300px;
+        max-width: 100%;
+
+    }
+
+
+    .about-image {
+
+        width: 260px;
+        height: 260px;
+
+    }
+
+
+    .yellow-frame {
+
+        width: 244px;
+        height: 254px;
+
+    }
+
+
+    .about-image img {
+
+        width: 244px;
+        height: 244px;
+
+    }
+
+
+    .about-text {
+
+        width: 90%;
+        max-width: 90%;
+
+    }
+
+
+    .service-container,
+    .experience-container {
 
         grid-template-columns: 1fr;
+
+        max-width: 350px;
+        margin: 0 auto;
+
+    }
+
+
+    .portfolio-container {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        height: auto;
+
+    }
+
+
+    .portfolio-big,
+    .portfolio-small {
+
+        width: 100%;
+        height: 280px;
 
     }
 
